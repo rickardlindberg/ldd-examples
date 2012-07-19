@@ -5,11 +5,13 @@
         <title>Example</title>
     </head>
     <body>
-        <a href="http://jquery.com/">jQuery</a>
+        <a href="http://jquery.com/" id="theLink">jQuery</a>
         <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-                alert('hello');
+                $("#theLink")
+                    .css("border", "1px solid black")
+                    .css("font-size", "40px");
             });
         </script>
     </body>
