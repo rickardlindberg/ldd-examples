@@ -1,3 +1,2 @@
 #!/bin/sh
-ghc --make -Werror -fwarn-unused-imports $1.hs
-./$1
+ghc --make -Werror -fwarn-unused-imports $1.hs && ./$1
