@@ -3,6 +3,7 @@ module PuzzleState where
 import Piece
 import Pos
 import Data.Maybe
+import Data.List
 import qualified Data.Set as S
 
 data PuzzleState = PuzzleState
@@ -48,4 +49,7 @@ pieceAt pos (PuzzleState _ pieces) = findPieceWithPos pieces pos
         findPieceWithPos (x:xs) p
             | posInPiece p x = Just x
             | otherwise      = findPieceWithPos xs p
+
+printPuzzleStates :: [PuzzleState] -> String
+printPuzzleStates states = intercalate "\n" (map printPuzzleState states)
 

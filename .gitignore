@@ -1,3 +1,4 @@
 *.hi
 *.o
-/puzzle/Puzzle
+/puzzle/PuzzleTest1
+/puzzle/PuzzleTest2
