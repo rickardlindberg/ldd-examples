@@ -1,4 +1,4 @@
-findSolutions :: Board -> [Board]
+findSolutions :: [Piece] -> Piece -> [PuzzleState]
 
 findSolutions = undefined
 
