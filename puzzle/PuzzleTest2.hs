@@ -11,6 +11,7 @@ main = do
                                 ]
     let board  = parsePiece '.' [ "***"
                                 , "***"
+                                , "***"
                                 ]
     putStrLn $ printPuzzleStates (findSolutions [square, stick] board)
 
