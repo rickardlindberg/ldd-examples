@@ -17,3 +17,10 @@ posAdd (Pos x1 y1) (Pos x2 y2) = Pos (x1+x2) (y1+y2)
 posRotate45 :: Pos -> Pos
 posRotate45 (Pos x y) = Pos (-y) x
 
+posNeighbours :: Pos -> [Pos]
+posNeighbours (Pos x y) = [ Pos (x+1)   y
+                          , Pos (x-1)   y
+                          , Pos   x   (y+1)
+                          , Pos   x   (y-1)
+                          ]
+

@@ -14,9 +14,9 @@ data PuzzleNode = PuzzleNode
     }
 
 instance TreeNode PuzzleNode where
-    generateChildren node = generatePuzzleNodeChildren node
-    stopLooking      node = False
     isSolution       node = null (piecesLeft node)
+    stopLooking      node = stopLookingPuzzle node
+    generateChildren node = generatePuzzleNodeChildren node
 
 generatePuzzleNodeChildren :: PuzzleNode -> [PuzzleNode]
 generatePuzzleNodeChildren (PuzzleNode []     puzzleState) = []
@@ -33,4 +33,7 @@ getInner state piece = mapMaybe (\pos -> putPiece piece pos state) positions
         maxY      = pieceHeight (fitPiece state) - pieceHeight piece
 
 findSolutions pieces fitPiece = map puzzleState (search (PuzzleNode pieces (emptyPuzzle fitPiece)))
+
+stopLookingPuzzle :: PuzzleNode -> Bool
+stopLookingPuzzle node = False
 

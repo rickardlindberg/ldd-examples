@@ -2,6 +2,19 @@ import DSL
 import PuzzleState
 import Solver
 
+squareStickSolutions :: String
+squareStickSolutions =
+    let square = parsePiece '#' [ "**"
+                                , "**"
+                                ]
+        stick  = parsePiece 'I' [ "*"
+                                , "*"
+                                ]
+        board  = parsePiece '.' [ "***"
+                                , "***"
+                                ]
+    in  printSolutions (findSolutions [square, stick] board)
+
 main = do
     let square = parsePiece '#' [ "**"
                                 , "**"
@@ -13,5 +26,5 @@ main = do
                                 , "***"
                                 , "***"
                                 ]
-    putStrLn $ printPuzzleStates (findSolutions [square, stick] board)
+    putStrLn $ printSolutions (findSolutions [square, stick] board)
 

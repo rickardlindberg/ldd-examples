@@ -50,6 +50,38 @@ pieceAt pos (PuzzleState _ pieces) = findPieceWithPos pieces pos
             | posInPiece p x = Just x
             | otherwise      = findPieceWithPos xs p
 
-printPuzzleStates :: [PuzzleState] -> String
-printPuzzleStates states = intercalate "\n" (map printPuzzleState states)
+printSolutions :: [PuzzleState] -> String
+printSolutions states = intercalate "\n" (map printPuzzleState states)
+
+islands :: PuzzleState -> [S.Set Pos]
+islands state = islandsFromPos freePositions
+    where
+        freePositions     = S.difference fitPiecePositions placedPositions
+        fitPiecePositions = positions $ fitPiece state
+        placedPositions   = foldl S.union S.empty (map positions (pieces state))
+
+islandsFromPos :: S.Set Pos -> [S.Set Pos]
+islandsFromPos positions
+    | S.null positions = []
+    | otherwise        = let aPos       = S.findMin positions
+                             thisIsland = extractGroup aPos positions
+                         in  thisIsland : islandsFromPos (S.difference positions thisIsland)
+
+extractGroup :: Pos -> S.Set Pos -> S.Set Pos
+extractGroup pos positions
+    | pos `S.notMember` positions = S.empty
+    | otherwise                   = inner (S.singleton pos)
+                                          (S.fromList (posNeighbours pos))
+                                          (S.delete pos positions)
+    where
+        inner :: S.Set Pos -> S.Set Pos -> S.Set Pos -> S.Set Pos
+        inner included toCheck free =
+            if S.null toCheck || S.null free
+                then included
+                else inner newIncluded newToCheck newFree
+            where
+                checkOk     = S.intersection toCheck free
+                newIncluded = S.union included checkOk
+                newToCheck  = S.fromList (concatMap posNeighbours (S.toList checkOk))
+                newFree     = S.difference free checkOk
 
