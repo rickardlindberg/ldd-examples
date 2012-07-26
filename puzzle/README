@@ -1,0 +1,5 @@
+Run examples using the run script:
+
+    ./run PuzzleTest1
+    ./run PuzzleTest2
+    ./run PuzzleTest2
