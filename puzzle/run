@@ -1,2 +1,4 @@
 #!/bin/sh
-ghc --make -Werror -fwarn-unused-imports $1.hs && ./$1
+PROF_COMPILE="-rtsopts -prof -auto-all -caf-all -fforce-recomp"
+PROF_RUN="+RTS -p -RTS"
+ghc --make -Werror -fwarn-unused-imports $PROF_COMPILE $1.hs && ./$1 $PROF_RUN
