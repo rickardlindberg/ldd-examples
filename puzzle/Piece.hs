@@ -8,9 +8,6 @@ data Piece = Piece
     , positions :: S.Set Pos
     } deriving (Ord, Eq)
 
-movePiece :: Pos -> Piece -> Piece
-movePiece pos (Piece symbol positions) = Piece symbol (S.map (addPos pos) positions)
-
 pieceWidth :: Piece -> Int
 pieceWidth (Piece _ positions) = 1 + maximum (map x (S.toList positions))
 
@@ -19,6 +16,9 @@ pieceHeight (Piece _ positions) = 1 + maximum (map y (S.toList positions))
 
 posInPiece :: Pos -> Piece -> Bool
 posInPiece pos (Piece _ positions) = pos `S.member` positions
+
+movePiece :: Pos -> Piece -> Piece
+movePiece pos (Piece symbol positions) = Piece symbol (S.map (addPos pos) positions)
 
 getCombinations :: Piece -> [Piece]
 getCombinations piece =

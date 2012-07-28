@@ -1,6 +1,6 @@
 import DSL
 import PuzzleState
-import Solver
+import SimpleSolver
 
 squareStickSolutions :: String
 squareStickSolutions =
