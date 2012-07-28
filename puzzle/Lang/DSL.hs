@@ -1,9 +1,9 @@
-module DSL where
+module Lang.DSL where
 
 import Data.Maybe
 import qualified Data.Set as S
-import Piece
-import Pos
+import Lang.Piece
+import Lang.Pos
 
 parsePiece :: Char -> [String] -> Piece
 

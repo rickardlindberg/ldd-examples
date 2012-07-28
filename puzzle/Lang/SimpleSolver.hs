@@ -1,9 +1,9 @@
-module SimpleSolver where
+module Lang.SimpleSolver where
 
-import Piece
-import PuzzleState
-import TreeSearch
-import SolverCommon
+import Lang.Piece
+import Lang.PuzzleState
+import Lang.TreeSearch
+import Lang.SolverCommon
 
 findSolutions :: [Piece] -> Piece -> [PuzzleState]
 

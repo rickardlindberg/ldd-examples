@@ -1,7 +1,7 @@
-module PuzzleState where
+module Lang.PuzzleState where
 
-import Piece
-import Pos
+import Lang.Piece
+import Lang.Pos
 import Data.Maybe
 import Data.List
 import qualified Data.Set as S

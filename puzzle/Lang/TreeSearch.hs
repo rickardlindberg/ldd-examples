@@ -1,4 +1,4 @@
-module TreeSearch where
+module Lang.TreeSearch where
 
 
 search :: (a -> Bool) -> (a -> Bool) -> (a -> [a]) -> a -> [a]

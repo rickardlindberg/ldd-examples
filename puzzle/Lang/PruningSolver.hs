@@ -1,10 +1,10 @@
-module PruningSolver where
+module Lang.PruningSolver where
 
-import Pos
-import Piece
-import PuzzleState
-import TreeSearch
-import SolverCommon
+import Lang.Pos
+import Lang.Piece
+import Lang.PuzzleState
+import Lang.TreeSearch
+import Lang.SolverCommon
 import qualified Data.Set as S
 
 findSolutionsBetter :: [Piece] -> Piece -> [PuzzleNode -> Bool] -> [PuzzleState]

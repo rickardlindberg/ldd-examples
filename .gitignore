@@ -1,6 +1,7 @@
 *.hi
 *.o
-/puzzle/PuzzleTest1
-/puzzle/PuzzleTest2
-/puzzle/PuzzleTest3
 *.prof
+/puzzle/TestDescriptionLanguage
+/puzzle/TestSquareStickPuzzle
+/puzzle/TestSquareStick2
+/puzzle/TestPentominoesPuzzle

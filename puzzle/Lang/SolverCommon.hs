@@ -1,8 +1,8 @@
-module SolverCommon where
+module Lang.SolverCommon where
 
-import Piece
-import Pos
-import PuzzleState
+import Lang.Piece
+import Lang.Pos
+import Lang.PuzzleState
 import Data.Maybe
 
 data PuzzleNode = PuzzleNode

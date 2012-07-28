@@ -1,7 +1,7 @@
-import DSL
-import Pos
-import Piece
-import PuzzleState
+import Lang.DSL
+import Lang.Pos
+import Lang.Piece
+import Lang.PuzzleState
 
 main = do
     let square = parsePiece '#' [ "**"

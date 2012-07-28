@@ -1,7 +1,7 @@
-module Piece where
+module Lang.Piece where
 
 import qualified Data.Set as S
-import Pos
+import Lang.Pos
 
 data Piece = Piece
     { symbol    :: Char

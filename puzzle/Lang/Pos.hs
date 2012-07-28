@@ -1,4 +1,4 @@
-module Pos where
+module Lang.Pos where
 
 data Pos = Pos
     { x :: Int

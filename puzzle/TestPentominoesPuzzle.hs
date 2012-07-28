@@ -1,7 +1,7 @@
-import DSL
-import SolverCommon
-import PruningSolver
-import PuzzleState
+import Lang.DSL
+import Lang.SolverCommon
+import Lang.PruningSolver
+import Lang.PuzzleState
 import qualified Data.Set as S
 
 pentominoesPieces =
