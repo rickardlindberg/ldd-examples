@@ -1,4 +1,9 @@
 #!/bin/sh
-PROF_COMPILE="-rtsopts -prof -auto-all -caf-all -fforce-recomp"
-PROF_RUN="+RTS -sstderr -p -RTS"
+if [ "$2" = "-prof" ]; then
+    PROF_COMPILE="-rtsopts -prof -auto-all -caf-all -fforce-recomp"
+    PROF_RUN="+RTS -sstderr -p -RTS"
+else
+    PROF_COMPILE=""
+    PROF_RUN=""
+fi
 ghc --make -Werror -fwarn-unused-imports $PROF_COMPILE $1.hs && ./$1 $PROF_RUN
