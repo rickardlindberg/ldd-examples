@@ -2,7 +2,6 @@ import Lang.DSL
 import Lang.PuzzleState
 import Lang.SimpleSolver
 
-squareStickSolutions :: String
 squareStickSolutions =
   let square = parsePiece '#' [ "**"
                               , "**"
